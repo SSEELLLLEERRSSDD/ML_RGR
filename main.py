@@ -19,7 +19,7 @@ def page_info():
     st.header("Автор")
     st.write("ФИО: Николаев Даниил Дмитриевич")
     st.write("Группа: МО-221")
-    st.image("my_photo.jpg",width =500)
+    st.image("my_photo.jpg")
 
 def page_datasetinfo():
     st.title("Информация о наборе данных")
