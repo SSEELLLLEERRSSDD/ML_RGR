@@ -101,7 +101,7 @@ def page_visualization():
 
 
 
-    st.header("Графики для целевого признака и наиболее коррелирующих с ним некоторых признаков")
+    st.header("Графики целевого признака и наиболее коррелирующих с ним признаков")
 
     columns=[('RainTomorrow', 'RainToday'),
             ('RainTomorrow', 'Humidity9am'),
@@ -196,7 +196,7 @@ def page_ml_prediction():
     st.title("Получить предсказание дождя.")
 
     st.header("Date")
-    Date = st.number_input("Число:", value=2012, min_value=1900, max_value=2100)
+    Date = st.number_input("Месяц:", value=1, min_value=1, max_value=12)
 
     st.header("Location")
     locations = ['Cobar', 'CoffsHarbour', 'Moree', 'NorfolkIsland', 'Sydney',
@@ -208,19 +208,19 @@ def page_ml_prediction():
     Location = st.selectbox("Город", locations)
 
     st.header("MinTemp")
-    MinTemp = st.number_input("Число:", value=20.9)
+    MinTemp = st.number_input("Число:", value=20)
 
     st.header("MaxTemp")
-    MaxTemp = st.number_input("Число:", value=37.8)
+    MaxTemp = st.number_input("Число:", value=40)
 
     st.header("Rainfall")
-    Rainfall = st.number_input("Число:", value=2)
+    Rainfall = st.number_input("Число:", value=200, min_value=0)
 
     st.header("Evaporation")
-    Evaporation = st.number_input("Число:", value=12.8)
+    Evaporation = st.number_input("Число:", value=12.8, min_value=0)
 
     st.header("Sunshine")
-    Sunshine = st.number_input("Число:", value=13.2)
+    Sunshine = st.number_input("Число:", value=13.2, min_value=0)
 
     st.header("WindGustDir")
     dirs=['SSW', 'S', 'NNE', 'WNW', 'N', 'SE', 'ENE', 'NE', 'E', 'SW', 'W',
@@ -228,7 +228,7 @@ def page_ml_prediction():
     WindGustDir = st.selectbox("Направление", dirs)
 
     st.header("WindGustSpeed")
-    WindGustSpeed = st.number_input("Число:", value=30)
+    WindGustSpeed = st.number_input("Число:", value=30, min_value=0)
 
     st.header("WindDir9am")
     dirs2=['ENE', 'SSE', 'NNE', 'WNW', 'NW', 'N', 'S', 'SE', 'NE', 'W', 'SSW',
@@ -241,34 +241,34 @@ def page_ml_prediction():
     WindDir3pm = st.selectbox("Направление", dirs3)
 
     st.header("WindSpeed9am")
-    WindSpeed9am = st.number_input("Число:", value=11)
+    WindSpeed9am = st.number_input("Число:", value=11, min_value=0)
 
     st.header("WindSpeed3pm")
-    WindSpeed3pm = st.number_input("Число:", value=7)
+    WindSpeed3pm = st.number_input("Число:", value=7, min_value=0)
 
     st.header("Humidity9am")
-    Humidity9am = st.number_input("Число:", value=27)
+    Humidity9am = st.number_input("Число:", value=27, min_value=0)
 
     st.header("Humidity3pm")
-    Humidity3pm = st.number_input("Число:", value=9)
+    Humidity3pm = st.number_input("Число:", value=9, min_value=0)
 
     st.header("Pressure9am")
-    Pressure9am = st.number_input("Число:", value=1012.6)
+    Pressure9am = st.number_input("Число:", value=1012.6, min_value=0)
 
     st.header("Pressure3pm")
-    Pressure3pm = st.number_input("Число:", value=1010.1)
+    Pressure3pm = st.number_input("Число:", value=1010.1, min_value=0)
 
     st.header("Cloud9am")
-    Cloud9am = st.number_input("Число:", value=0.1)
+    Cloud9am = st.number_input("Число:", value=0.1, min_value=0)
 
     st.header("Cloud3pm")
-    Cloud3pm = st.number_input("Число:", value=1)
+    Cloud3pm = st.number_input("Число:", value=1, min_value=0)
 
     st.header("Temp9am")
-    Temp9am = st.number_input("Число:", value=29.8)
+    Temp9am = st.number_input("Число:", value=29.8, min_value=0)
 
     st.header("Temp3pm")
-    Temp3pm = st.number_input("Число:", value=36.4)
+    Temp3pm = st.number_input("Число:", value=36.4, min_value=0)
 
     st.header("RainToday")
     RainToday = st.number_input("Число:", value=0, min_value=0, max_value=1)
