@@ -208,16 +208,16 @@ def page_ml_prediction():
     Location = st.selectbox("Город", locations)
 
     st.header("MinTemp")
-    MinTemp = st.number_input("Число:", value=20)
+    MinTemp = st.number_input("Число:", value=20.0)
 
     st.header("MaxTemp")
-    MaxTemp = st.number_input("Число:", value=40)
+    MaxTemp = st.number_input("Число:", value=40.0)
 
     st.header("Rainfall")
     Rainfall = st.number_input("Число:", value=200, min_value=0, max_value=999999)
 
     st.header("Evaporation")
-    Evaporation = st.number_input("Число:", value=12.8, min_value=0, max_value=999999)
+    Evaporation = st.number_input("Число:", value=12.8)
 
     st.header("Sunshine")
     Sunshine = st.number_input("Число:", value=13.2, min_value=0, max_value=999999)
