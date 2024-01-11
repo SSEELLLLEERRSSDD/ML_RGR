@@ -354,3 +354,12 @@ def page_ml_prediction():
         pred.append(int(stacking_pred))
         st.write(f"{stacking_model.predict(df)[0]}")
 
+
+if page == "Информация о разработчике":
+    page_info()
+elif page == "Информация о наборе данных":
+    page_datasetinfo()
+elif page == "Визуализации данных":
+    page_visualization()
+elif page == "Предсказание модели ML":
+    page_ml_prediction()
