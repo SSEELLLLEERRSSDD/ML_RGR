@@ -1,4 +1,5 @@
-﻿import streamlit as st
+
+import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -6,6 +7,7 @@ import numpy as np
 from sklearn.metrics import accuracy_score
 from sklearn.metrics.cluster import rand_score
 import pickle
+
 
 page = st.sidebar.radio(
     "Выберите страницу:",
@@ -116,7 +118,7 @@ def page_visualization():
 
 def page_ml_prediction():
     with open('OneHotEncoder.pkl', 'rb') as file: 
-    ColumnTransform = pickle.load(file)
+        ColumnTransform = pickle.load(file)
 
     uploaded_file = st.file_uploader("Выберите файл датасета")
 
