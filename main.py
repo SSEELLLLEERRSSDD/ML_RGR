@@ -34,8 +34,8 @@ def page_datasetinfo():
     st.write("- Rainfall: Количество осадков, выпавших за сутки в мм")
     st.write("- Evaporation: Испарение")
     st.write("- Sunshine: Количество часов яркого солнечного света в сутках")
-    st.write("- WindGustDir: Направление самого сильного порыва ветра за сутки до полуночи")
-    st.write("- WindGustSpeed: Скорость самого сильного порыва ветра за сутки до полуночи.")
+    st.write("- WindGustDir: Направление самого сильного порыва ветра за сутки")
+    st.write("- WindGustSpeed: Скорость самого сильного порыва ветра за сутки")
     st.write("- WindDir9am: Направление ветра в 9 часов утра")
     st.write("- WindDir3pm: Направление ветра в 3 часа дня")
     st.write("- WindSpeed9am: Скорость ветра в 9 часов утра")
@@ -51,12 +51,11 @@ def page_datasetinfo():
     st.write("- RainToday: Был ли дождь сегодня")
     st.write("- RainTomorrow: Будет ли дождь завтра")
     st.header("Предобработка данных")
-    st.write("В датасете необходимо предсказать будет ли дождь завтра. Будет дождь или не будет показателем 1 или 0.")
+    st.write("В датасете необходимо предсказать будет ли дождь завтра")
     st.write("1 - дождь будет")
     st.write("0 - дождя не будет")
     st.write("В датасете присутствовали категориальные признаки, так что было применено One-hot кодирование")
     st.write("Были удалены дубликаты")
-    st.write("Было проведено EDA и удалены выбросы")
     st.write("Числовые признаки были масштабированны. Был устранен дисбаланс классов.")
 
 def page_visualization():
@@ -264,9 +263,6 @@ def page_ml_prediction():
     ], axis=1)
     df=df.drop(['RainTomorrow'],axis=1)
 
-
-
-
     button_clicked = st.button("Предсказать")
 
     if button_clicked:
@@ -333,7 +329,6 @@ def page_ml_prediction():
         st.header("SVC:")
         svc_pred = svc_model.predict(x_class)
         st.write('Accuracy: ',f"{accuracy_score(y_class, svc_pred)}")
-
 
         st.header("bagging:")
         bagging_pred = bagging_model.predict(x_class)
