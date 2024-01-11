@@ -150,49 +150,6 @@ def page_ml_prediction():
     x_class=dataclass.drop(['RainTomorrow'],axis=1)
     y_class=dataclass['RainTomorrow']
 
-
-
-    button_clicked_metrics = st.button("Расчитать точность моделей на датасете")
-
-    if button_clicked_metrics:
-        with open('SVC.plk', 'rb') as file:
-            svc_model = pickle.load(file)
-
-        with open('Bagging.plk', 'rb') as file:
-            bagging_model = pickle.load(file)
-
-        with open('GradientBoosting.plk', 'rb') as file:
-            gradient_model = pickle.load(file)
-
-        with open('Stacking_model.plk', 'rb') as file:
-            stacking_model = pickle.load(file)
-
-        from tensorflow.keras.models import load_model
-        nn_model = load_model('NN.h5')
-
-
-        st.header("SVC:")
-        svc_pred = svc_model.predict(x_class)
-        st.write('Accuracy: ',f"{accuracy_score(y_class, svc_pred)}")
-
-
-        st.header("bagging:")
-        bagging_pred = bagging_model.predict(x_class)
-        st.write('Accuracy: ',f"{accuracy_score(y_class, bagging_pred)}")
-
-        st.header("gradient:")
-        gradient_pred = gradient_model.predict(x_class)
-        st.write('Accuracy: ',f"{accuracy_score(y_class, gradient_pred)}")
-
-        st.header("Perceptron:")
-        nn_pred = [np.argmax(pred) for pred in nn_model.predict(x_class, verbose=None)]
-        st.write('Accuracy: ',f"{accuracy_score(y_class, nn_pred)}")
-
-        st.header("Stacking:")
-        stacking_pred = stacking_model.predict(x_class)
-        st.write('Accuracy: ',f"{accuracy_score(y_class, stacking_pred)}")
-
-
     st.title("Получить предсказание дождя.")
 
     st.header("Date")
@@ -354,6 +311,45 @@ def page_ml_prediction():
         stacking_pred = stacking_model.predict(df)[0]
         pred.append(int(stacking_pred))
         st.write(f"{stacking_model.predict(df)[0]}")
+    button_clicked_metrics = st.button("Расчитать точность моделей на датасете")
+
+    if button_clicked_metrics:
+        with open('SVC.plk', 'rb') as file:
+            svc_model = pickle.load(file)
+
+        with open('Bagging.plk', 'rb') as file:
+            bagging_model = pickle.load(file)
+
+        with open('GradientBoosting.plk', 'rb') as file:
+            gradient_model = pickle.load(file)
+
+        with open('Stacking_model.plk', 'rb') as file:
+            stacking_model = pickle.load(file)
+
+        from tensorflow.keras.models import load_model
+        nn_model = load_model('NN.h5')
+
+
+        st.header("SVC:")
+        svc_pred = svc_model.predict(x_class)
+        st.write('Accuracy: ',f"{accuracy_score(y_class, svc_pred)}")
+
+
+        st.header("bagging:")
+        bagging_pred = bagging_model.predict(x_class)
+        st.write('Accuracy: ',f"{accuracy_score(y_class, bagging_pred)}")
+
+        st.header("gradient:")
+        gradient_pred = gradient_model.predict(x_class)
+        st.write('Accuracy: ',f"{accuracy_score(y_class, gradient_pred)}")
+
+        st.header("Perceptron:")
+        nn_pred = [np.argmax(pred) for pred in nn_model.predict(x_class, verbose=None)]
+        st.write('Accuracy: ',f"{accuracy_score(y_class, nn_pred)}")
+
+        st.header("Stacking:")
+        stacking_pred = stacking_model.predict(x_class)
+        st.write('Accuracy: ',f"{accuracy_score(y_class, stacking_pred)}")
 
 
 if page == "Информация о разработчике":
