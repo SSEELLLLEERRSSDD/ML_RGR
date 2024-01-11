@@ -214,13 +214,13 @@ def page_ml_prediction():
     MaxTemp = st.number_input("Число:", value=40)
 
     st.header("Rainfall")
-    Rainfall = st.number_input("Число:", value=200, min_value=0)
+    Rainfall = st.number_input("Число:", value=200, min_value=0, max_value=999999)
 
     st.header("Evaporation")
-    Evaporation = st.number_input("Число:", value=12.8, min_value=0)
+    Evaporation = st.number_input("Число:", value=12.8, min_value=0, max_value=999999)
 
     st.header("Sunshine")
-    Sunshine = st.number_input("Число:", value=13.2, min_value=0)
+    Sunshine = st.number_input("Число:", value=13.2, min_value=0, max_value=999999)
 
     st.header("WindGustDir")
     dirs=['SSW', 'S', 'NNE', 'WNW', 'N', 'SE', 'ENE', 'NE', 'E', 'SW', 'W',
@@ -228,7 +228,7 @@ def page_ml_prediction():
     WindGustDir = st.selectbox("Направление", dirs)
 
     st.header("WindGustSpeed")
-    WindGustSpeed = st.number_input("Число:", value=30, min_value=0)
+    WindGustSpeed = st.number_input("Число:", value=30, min_value=0, max_value=999999)
 
     st.header("WindDir9am")
     dirs2=['ENE', 'SSE', 'NNE', 'WNW', 'NW', 'N', 'S', 'SE', 'NE', 'W', 'SSW',
@@ -241,34 +241,34 @@ def page_ml_prediction():
     WindDir3pm = st.selectbox("Направление", dirs3)
 
     st.header("WindSpeed9am")
-    WindSpeed9am = st.number_input("Число:", value=11, min_value=0)
+    WindSpeed9am = st.number_input("Число:", value=11, min_value=0, max_value=999999)
 
     st.header("WindSpeed3pm")
-    WindSpeed3pm = st.number_input("Число:", value=7, min_value=0)
+    WindSpeed3pm = st.number_input("Число:", value=7, min_value=0, max_value=999999)
 
     st.header("Humidity9am")
-    Humidity9am = st.number_input("Число:", value=27, min_value=0)
+    Humidity9am = st.number_input("Число:", value=27, min_value=0, max_value=999999)
 
     st.header("Humidity3pm")
-    Humidity3pm = st.number_input("Число:", value=9, min_value=0)
+    Humidity3pm = st.number_input("Число:", value=9, min_value=0, max_value=999999)
 
     st.header("Pressure9am")
-    Pressure9am = st.number_input("Число:", value=1012.6, min_value=0)
+    Pressure9am = st.number_input("Число:", value=1012.6, min_value=0, max_value=999999)
 
     st.header("Pressure3pm")
-    Pressure3pm = st.number_input("Число:", value=1010.1, min_value=0)
+    Pressure3pm = st.number_input("Число:", value=1010.1, min_value=0, max_value=999999)
 
     st.header("Cloud9am")
-    Cloud9am = st.number_input("Число:", value=0.1, min_value=0)
+    Cloud9am = st.number_input("Число:", value=0.1, min_value=0, max_value=999999)
 
     st.header("Cloud3pm")
-    Cloud3pm = st.number_input("Число:", value=1, min_value=0)
+    Cloud3pm = st.number_input("Число:", value=1, min_value=0, max_value=999999)
 
     st.header("Temp9am")
-    Temp9am = st.number_input("Число:", value=29.8, min_value=0)
+    Temp9am = st.number_input("Число:", value=29.8, min_value=0, max_value=999999)
 
     st.header("Temp3pm")
-    Temp3pm = st.number_input("Число:", value=36.4, min_value=0)
+    Temp3pm = st.number_input("Число:", value=36.4, min_value=0, max_value=999999)
 
     st.header("RainToday")
     RainToday = st.number_input("Число:", value=0, min_value=0, max_value=1)
