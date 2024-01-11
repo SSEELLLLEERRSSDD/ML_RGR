@@ -324,7 +324,8 @@ def page_ml_prediction():
 
         with open('Stacking_model.plk', 'rb') as file:
             stacking_model = pickle.load(file)
-
+        from tensorflow.keras.models import load_model
+    nn_model = load_model('NN.h5')
 
 
         st.header("SVC:")
