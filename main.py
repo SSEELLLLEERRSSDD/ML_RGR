@@ -311,7 +311,7 @@ def page_ml_prediction():
         stacking_pred = stacking_model.predict(df)[0]
         pred.append(int(stacking_pred))
         st.write(f"{stacking_model.predict(df)[0]}")
-    button_clicked_metrics = st.button("Расчитать точность моделей на датасете")
+    button_clicked_metrics = st.button("Вывести точность моделей")
 
     if button_clicked_metrics:
         with open('SVC.plk', 'rb') as file:
